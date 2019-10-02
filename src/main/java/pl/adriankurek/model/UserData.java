@@ -11,12 +11,12 @@ import pl.adriankurek.api.UserDataApi;
 
 public class UserData implements UserDataApi {
     private final static String DATABASE_NAME = "dataBase";
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
+    private EntityManagerFactory entityManagerFactory;
+    private EntityManager entityManager;
 	
-	public UserData() {
-		openConnection();
-	}
+    public UserData() {
+	openConnection();
+    }
 
     @Override
     public List<User> getUsers() {
