@@ -21,8 +21,8 @@ public class UserData implements UserDataApi {
     @Override
     public List<User> getUsers() {
         String hql = "FROM User";
-		Query query = entityManager.createQuery(hql);
-		List <User> users = query.getResultList();
+	Query query = entityManager.createQuery(hql);
+	List <User> users = query.getResultList();
         return users;
     }
 
@@ -30,14 +30,14 @@ public class UserData implements UserDataApi {
     public void insertUser(User user) {
         entityManager.getTransaction().begin();
         entityManager.persist(user);
-		entityManager.getTransaction().commit();
+	entityManager.getTransaction().commit();
     }
 
     @Override
     public void deleteUser(User user) {
         entityManager.getTransaction().begin();
         entityManager.remove(user);
-		entityManager.getTransaction().commit();
+	entityManager.getTransaction().commit();
     }
 
     @Override
@@ -45,20 +45,21 @@ public class UserData implements UserDataApi {
     	long id = user.getId();
     	String hql = "UPDATE User SET name = '" + user.getName() + "', city = '" + user.getCity()
 		+ "' WHERE id = " + id;
+	    
     	Query query = entityManager.createQuery(hql);
-    	
-        entityManager.getTransaction().begin();
+        
+	entityManager.getTransaction().begin();
         query.executeUpdate();
-		entityManager.getTransaction().commit();
+	entityManager.getTransaction().commit();
     }
 
     private void openConnection() {
-		entityManagerFactory = Persistence.createEntityManagerFactory(DATABASE_NAME);
-		entityManager = entityManagerFactory.createEntityManager();
-	}
+	entityManagerFactory = Persistence.createEntityManagerFactory(DATABASE_NAME);
+	entityManager = entityManagerFactory.createEntityManager();
+    }
 
-	private void closeConnection() {
-		entityManager.close();
-		entityManagerFactory.close();
+    private void closeConnection() {
+	entityManager.close();
+	entityManagerFactory.close();
     }
 }
