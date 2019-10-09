@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Users")
 public class User {
-	@Id
+    @Id
     @GeneratedValue
     private long id;
     private String name;
