@@ -10,70 +10,70 @@ import pl.adriankurek.model.User;
 import pl.adriankurek.api.ViewApi;
 
 public class View extends JFrame implements ViewApi {
-	private JButton btnInsert;
-	private JButton btnUpdate;
-	private JButton btnDelete;;
-	private JButton btnClear;
+    private JButton btnInsert;
+    private JButton btnUpdate;
+    private JButton btnDelete;;
+    private JButton btnClear;
 
-	private JTextField txtFieldName;
-	private JTextField txtFieldCity;
+    private JTextField txtFieldName;
+    private JTextField txtFieldCity;
 
-	private JPanel panelTxt;
-	private JPanel panelBtn;
-	private JLabel lblName;
-	private JLabel lblCity;
+    private JPanel panelTxt;
+    private JPanel panelBtn;
+    private JLabel lblName;
+    private JLabel lblCity;
 
-	private JLabel lblUsers;
-	private JComboBox<User> cmbBox;
-
+    private JLabel lblUsers;
+    private JComboBox<User> cmbBox;
+	
     public View() {
-        super("Users Data Base");
+       	super("Users Data Base");
 
-		btnInsert = new JButton("Insert");
-		btnUpdate = new JButton("Update selected");
-		btnDelete = new JButton("Delete");
-		btnClear = new JButton("Clear fields");
+	btnInsert = new JButton("Insert");
+	btnUpdate = new JButton("Update selected");
+	btnDelete = new JButton("Delete");
+	btnClear = new JButton("Clear fields");
 		
-		txtFieldName = new JTextField(8);
-		txtFieldCity = new JTextField(8);
+	txtFieldName = new JTextField(8);
+	txtFieldCity = new JTextField(8);
 
-		panelTxt = new JPanel();
-		panelBtn = new JPanel();
+	panelTxt = new JPanel();
+	panelBtn = new JPanel();
 
-		cmbBox = new JComboBox<>();
+	cmbBox = new JComboBox<>();
 
-		lblName = new JLabel("Name: ");
-		lblCity = new JLabel("City: ");
+	lblName = new JLabel("Name: ");
+	lblCity = new JLabel("City: ");
 
-		lblUsers = new JLabel("Users: ");
+	lblUsers = new JLabel("Users: ");
 
-		panelTxt.setLayout(new GridLayout(4, 1));
+	panelTxt.setLayout(new GridLayout(4, 1));
 
-		panelTxt.add(lblName);
-		panelTxt.add(txtFieldName);
-		panelTxt.add(lblCity);
-		panelTxt.add(txtFieldCity);
+	panelTxt.add(lblName);
+	panelTxt.add(txtFieldName);
+	panelTxt.add(lblCity);
+	panelTxt.add(txtFieldCity);
 
-		panelTxt.add(lblUsers);
-		panelTxt.add(cmbBox);
+	panelTxt.add(lblUsers);
+	panelTxt.add(cmbBox);
 
-		panelBtn.add(btnInsert);
-		panelBtn.add(btnUpdate);
-		panelBtn.add(btnDelete);
-		panelBtn.add(btnClear);
+	panelBtn.add(btnInsert);
+	panelBtn.add(btnUpdate);
+	panelBtn.add(btnDelete);
+	panelBtn.add(btnClear);
 
-		add(BorderLayout.NORTH, panelTxt);
-		add(BorderLayout.SOUTH, panelBtn);
+	add(BorderLayout.NORTH, panelTxt);
+	add(BorderLayout.SOUTH, panelBtn);
 
-		setLookAndFeel();
-		setSize(570, 400);
+	setLookAndFeel();
+	setSize(570, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
     @Override
     public void onInsertButtonClick(ActionListener listener) {
-        btnInsert.addActionListener(listener);
+    	btnInsert.addActionListener(listener);
     }
 
     @Override
@@ -89,12 +89,12 @@ public class View extends JFrame implements ViewApi {
     @Override
     public void onClearButtonClick(ActionListener listener) {
         btnClear.addActionListener(listener);
-	}
+    }
 	
-	@Override
-	public void onComboBoxClick(ActionListener listener) {
-		cmbBox.addActionListener(listener);
-	}
+    @Override
+    public void onComboBoxClick(ActionListener listener) {
+	cmbBox.addActionListener(listener);
+    }
 
     @Override
     public JTextField getNameTextField() {
@@ -123,10 +123,10 @@ public class View extends JFrame implements ViewApi {
     }
 
     private void setLookAndFeel() {
-		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		} catch (Exception ex) {
+	try {
+	    UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+	} catch (Exception ex) {
 
-		}
+	}
     }
 }
