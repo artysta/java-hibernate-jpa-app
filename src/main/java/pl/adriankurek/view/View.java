@@ -118,8 +118,7 @@ public class View extends JFrame implements ViewApi {
 
     @Override
     public int showYesNoMessage(String message, String tag, int type) {
-        int result = JOptionPane.showConfirmDialog(null, message, tag, JOptionPane.YES_NO_OPTION);
-		return result;
+	return result = JOptionPane.showConfirmDialog(null, message, tag, JOptionPane.YES_NO_OPTION);
     }
 
     private void setLookAndFeel() {
