@@ -25,55 +25,55 @@ public class View extends JFrame implements ViewApi {
 
     private JLabel lblUsers;
     private JComboBox<User> cmbBox;
-	
+
     public View() {
-       	super("Users Data Base");
+        super("Users Data Base");
 
-	btnInsert = new JButton("Insert");
-	btnUpdate = new JButton("Update selected");
-	btnDelete = new JButton("Delete");
-	btnClear = new JButton("Clear fields");
-		
-	txtFieldName = new JTextField(8);
-	txtFieldCity = new JTextField(8);
+        btnInsert = new JButton("Insert");
+        btnUpdate = new JButton("Update selected");
+        btnDelete = new JButton("Delete");
+        btnClear = new JButton("Clear fields");
 
-	panelTxt = new JPanel();
-	panelBtn = new JPanel();
+        txtFieldName = new JTextField(8);
+        txtFieldCity = new JTextField(8);
 
-	cmbBox = new JComboBox<>();
+        panelTxt = new JPanel();
+        panelBtn = new JPanel();
 
-	lblName = new JLabel("Name: ");
-	lblCity = new JLabel("City: ");
+        cmbBox = new JComboBox<>();
 
-	lblUsers = new JLabel("Users: ");
+        lblName = new JLabel("Name: ");
+        lblCity = new JLabel("City: ");
 
-	panelTxt.setLayout(new GridLayout(4, 1));
+        lblUsers = new JLabel("Users: ");
 
-	panelTxt.add(lblName);
-	panelTxt.add(txtFieldName);
-	panelTxt.add(lblCity);
-	panelTxt.add(txtFieldCity);
+        panelTxt.setLayout(new GridLayout(4, 1));
 
-	panelTxt.add(lblUsers);
-	panelTxt.add(cmbBox);
+        panelTxt.add(lblName);
+        panelTxt.add(txtFieldName);
+        panelTxt.add(lblCity);
+        panelTxt.add(txtFieldCity);
 
-	panelBtn.add(btnInsert);
-	panelBtn.add(btnUpdate);
-	panelBtn.add(btnDelete);
-	panelBtn.add(btnClear);
+        panelTxt.add(lblUsers);
+        panelTxt.add(cmbBox);
 
-	add(BorderLayout.NORTH, panelTxt);
-	add(BorderLayout.SOUTH, panelBtn);
+        panelBtn.add(btnInsert);
+        panelBtn.add(btnUpdate);
+        panelBtn.add(btnDelete);
+        panelBtn.add(btnClear);
 
-	setLookAndFeel();
-	setSize(570, 400);
+        add(BorderLayout.NORTH, panelTxt);
+        add(BorderLayout.SOUTH, panelBtn);
+
+        setLookAndFeel();
+        setSize(570, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
     @Override
     public void onInsertButtonClick(ActionListener listener) {
-    	btnInsert.addActionListener(listener);
+        btnInsert.addActionListener(listener);
     }
 
     @Override
@@ -90,10 +90,10 @@ public class View extends JFrame implements ViewApi {
     public void onClearButtonClick(ActionListener listener) {
         btnClear.addActionListener(listener);
     }
-	
+
     @Override
     public void onComboBoxClick(ActionListener listener) {
-	cmbBox.addActionListener(listener);
+        cmbBox.addActionListener(listener);
     }
 
     @Override
@@ -118,14 +118,14 @@ public class View extends JFrame implements ViewApi {
 
     @Override
     public int showYesNoMessage(String message, String tag, int type) {
-	return result = JOptionPane.showConfirmDialog(null, message, tag, JOptionPane.YES_NO_OPTION);
+        return JOptionPane.showConfirmDialog(null, message, tag, JOptionPane.YES_NO_OPTION);
     }
 
     private void setLookAndFeel() {
-	try {
-	    UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-	} catch (Exception ex) {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception ex) {
 
-	}
+        }
     }
 }

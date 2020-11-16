@@ -14,7 +14,8 @@ public class User {
     private String name;
     private String city;
 
-    public User() {}
+    public User() {
+    }
 
     public User(long id, String name, String city) {
         this.id = id;
@@ -42,7 +43,7 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
      * @return the name
      */

@@ -58,8 +58,7 @@ public class Controller {
 
 				if (result == JOptionPane.YES_OPTION) {
 					data.updateUser(user);
-					view.showMessage("User updated!", "Information",
-							JOptionPane.INFORMATION_MESSAGE);
+					view.showMessage("User updated!", "Information", JOptionPane.INFORMATION_MESSAGE);
 					refreshCmbBoxData();
 				}
 			} else {
@@ -86,7 +85,7 @@ public class Controller {
 				view.showMessage("No user is selected. Probably there are no users in your database.", "Information",
 						JOptionPane.INFORMATION_MESSAGE);
 			}
-			
+
 			refreshCmbBoxData();
 		});
 
@@ -112,7 +111,7 @@ public class Controller {
 		cmb.removeAllItems();
 
 		List<User> users = data.getUsers();
-		
+
 		for (User u : users) {
 			cmb.addItem(u);
 		}
