@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import pl.adriankurek.api.UserDataApi;
 
 public class UserData implements UserDataApi {
-    private final static String DATABASE_NAME = "dataBase";
+    private final static String DATABASE_NAME = "localdatabase";
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
 
