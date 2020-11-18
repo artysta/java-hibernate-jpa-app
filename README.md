@@ -1,18 +1,29 @@
 # java-hibernate-jpa-app
 Simple CRUD like application using **Hibernate ORM** & **Apache Maven**.
 
-## #1 Install MySQL Server & Apache Maven
+## #1 Install MySQL Server & create database
 
-If you want this app work, you have to install MySQL server first, change database name in **UserData.java** and update **persistence.xml** file by adding your own **username** and **password**.
+If you want this app work, you have to install **MySQL server** first.
 
-You also need to have **Apache Maven** installed.
+To do that, you can use the command below (if you are using [Chocolatey](https://chocolatey.org/) software):
 
-Use below command (if you are using [Chocolatey](https://chocolatey.org/) software) to install **Maven**:
+`choco install mysql`
+
+Now you have to connect to the MySQL server...
+
+`mysql -u root`
+
+...and create database (**localdatabase** is the name of the database in this case):
+
+`create database localdatabase;`
+
+## #2 Install Apache Maven
+
+Use the command below to install **Apache Maven**:
 
 `choco install maven`
 
-
-## #2 Run app
+## #3 Run app
 
 Install app using:
 
